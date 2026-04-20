@@ -15,9 +15,7 @@
     display: flex; flex-direction: column; align-items: center;
   }
   .container { width: 100%; max-width: 720px; }
-  .header {
-    margin-bottom: 40px;
-  }
+  .header { margin-bottom: 40px; }
   .header img { height: 28px; margin-bottom: 16px; }
   .header h1 {
     font-family: 'Outfit', sans-serif;
@@ -57,6 +55,7 @@
   }
   .tag-email { background: #DBEAFE; color: #1E40AF; }
   .tag-whatsapp { background: #D1FAE5; color: #065F46; }
+  .tag-push { background: #F3E8FF; color: #6B21A8; }
   .tag-ally { background: #FEF3C7; color: #92400E; }
   .tag-ally-react { background: #FEE2E2; color: #991B1B; }
 
@@ -83,56 +82,61 @@
 <div class="container">
 
   <div class="header">
-    <img src="assets/logo.png" alt="Addi">
-    <h1>Cash Advance — Fake Door</h1>
+    <img src="./assets2/logo.png" alt="Addi">
+    <h1>Adelanto de Efectivo — Fake Door</h1>
     <p>Marketing assets para el test de sensibilidad. Todas las piezas son mockups internos, no versiones finales de produccion.</p>
   </div>
 
-  <!-- MARKETING / LAUNCH COMMS -->
+  <!-- LAUNCH COMMS -->
   <div class="section">
     <div class="section-label">Comunicaciones de lanzamiento</div>
     <div class="card-grid">
-      <a class="card" href="marketing/04-day0-direction-a-earned-v2.html">
+      <a class="card" href="04-day0-direction-a-earned-v2.html">
         <span class="card-tag tag-email">Email</span>
         <div class="card-title">Day 0 — Lanzamiento</div>
-        <div class="card-desc">Email de lanzamiento con tono educativo. Direction A (earned).</div>
+        <div class="card-desc">Email de lanzamiento con tono educativo.</div>
       </a>
-      <a class="card" href="marketing/05-vamos-de-compras.html">
+      <a class="card" href="05-vamos-de-compras.html">
         <span class="card-tag tag-email">Email</span>
         <div class="card-title">Day 1 — Vamos de compras</div>
         <div class="card-desc">Recordatorio de compra post-lanzamiento.</div>
       </a>
-      <a class="card" href="marketing/07-day3-reminder.html">
+      <a class="card" href="07-day3-reminder.html">
         <span class="card-tag tag-email">Email</span>
         <div class="card-title">Day 3 — Reminder</div>
         <div class="card-desc">Tercer recordatorio para clientes que no han interactuado.</div>
       </a>
+      <a class="card" href="push-fake-door.html">
+        <span class="card-tag tag-push">Push</span>
+        <div class="card-title">Push notification</div>
+        <div class="card-desc">Notificacion push para el fake door.</div>
+      </a>
     </div>
   </div>
 
-  <!-- APOLOGY / POST-EXPERIENCE -->
+  <!-- POST-EXPERIENCE -->
   <div class="section">
     <div class="section-label">Post-experiencia (apologetic comms)</div>
     <div class="card-grid">
-      <a class="card" href="apology/fd-01-gracias-por-participar-v2.html">
+      <a class="card" href="fd-01-gracias-por-tu-interes.html">
         <span class="card-tag tag-email">Email</span>
-        <div class="card-title">Gracias por participar</div>
+        <div class="card-title">Gracias por tu interes</div>
         <div class="card-desc">Mensaje inicial con disculpa, descuento 10% y acceso anticipado.</div>
       </a>
-      <a class="card" href="apology/fd-02-recordatorio-descuento-v2.html">
+      <a class="card" href="fd-02-descuento.html">
         <span class="card-tag tag-email">Email</span>
         <div class="card-title">Recordatorio descuento</div>
-        <div class="card-desc">Primer recordatorio para usar el 10% de descuento.</div>
+        <div class="card-desc">Recordatorio para usar el 10% de descuento.</div>
       </a>
-      <a class="card" href="apology/fd-03-ultima-oportunidad-descuento-v2.html">
-        <span class="card-tag tag-email">Email</span>
-        <div class="card-title">Ultima oportunidad</div>
-        <div class="card-desc">Recordatorio final con urgencia antes de que expire el descuento.</div>
-      </a>
-      <a class="card" href="apology/wa-01-gracias-por-participar.html">
+      <a class="card" href="whatsapp-fake-door.html">
         <span class="card-tag tag-whatsapp">WhatsApp</span>
-        <div class="card-title">WhatsApp — Gracias</div>
-        <div class="card-desc">Mock de WhatsApp con copy + specs de caracteres.</div>
+        <div class="card-title">WhatsApp — Fake door</div>
+        <div class="card-desc">Mock de WhatsApp para el fake door.</div>
+      </a>
+      <a class="card" href="whatsapp-messages.html">
+        <span class="card-tag tag-whatsapp">WhatsApp</span>
+        <div class="card-title">WhatsApp — Messages</div>
+        <div class="card-desc">Mensajes de WhatsApp adicionales.</div>
       </a>
     </div>
   </div>
@@ -141,12 +145,12 @@
   <div class="section">
     <div class="section-label">Comunicaciones a aliados</div>
     <div class="card-grid">
-      <a class="card" href="allies/aliados-01-proactivo.html">
+      <a class="card" href="aliados-01-proactivo.html">
         <span class="card-tag tag-ally">Proactivo</span>
         <div class="card-title">Heads-up a aliados</div>
         <div class="card-desc">Version preventiva. Solo si se aprueba internamente.</div>
       </a>
-      <a class="card" href="allies/aliados-02-reactivo.html">
+      <a class="card" href="aliados-02-reactivo.html">
         <span class="card-tag tag-ally-react">Reactivo</span>
         <div class="card-title">Respuesta a aliados</div>
         <div class="card-desc">Plan B: enviar solo si aliados empiezan a preguntar.</div>

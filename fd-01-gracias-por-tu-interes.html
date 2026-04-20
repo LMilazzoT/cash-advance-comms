@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Door — Gracias por tu interés · Email 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #E5E5E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    color: #171717;
+  }
+
+  .email-client {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 0;
+  }
+
+  /* ═══ GMAIL CHROME ═══ */
+  .client-subject-bar {
+    background: #FFFFFF;
+    border-radius: 12px 12px 0 0;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #E8EAED;
+  }
+  .client-subject { font-size: 20px; font-weight: 400; color: #202124; margin-bottom: 14px; line-height: 1.3; }
+  .client-meta { display: flex; align-items: flex-start; gap: 12px; }
+  .sender-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #3B82F6;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  .sender-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .sender-info { flex: 1; min-width: 0; }
+  .sender-name-row {
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .s-name { font-size: 14px; font-weight: 600; color: #202124; }
+  .s-addr { font-size: 12px; color: #5F6368; }
+  .e-date { font-size: 12px; color: #5F6368; white-space: nowrap; }
+  .action-btns { display: flex; gap: 2px; }
+  .action-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: #5F6368; flex-shrink: 0;
+  }
+  .action-btn:hover { background: #F1F3F4; }
+  .action-btn svg { width: 17px; height: 17px; }
+  .to-lbl { font-size: 12px; color: #5F6368; margin-top: 2px; }
+
+  /* ═══ EMAIL WRAPPER ═══ */
+  .email-wrapper {
+    max-width: 600px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 32px -4px rgba(0,0,0,0.4);
+  }
+
+  /* ═══ TOPBAR ═══ */
+  .topbar {
+    background: #FFFFFF;
+    padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #F5F5F0;
+  }
+  .topbar-link { font-size: 12px; color: #3B82F6; text-decoration: none; font-weight: 600; }
+
+  /* ═══ HERO ═══ */
+  .hero { position: relative; overflow: hidden; }
+  .hero-blue { background: linear-gradient(180deg, #60A5FA 0%, #3B82F6 40%, #1D4ED8 100%); }
+  .hero::before {
+    content: ''; position: absolute;
+    top: -80px; right: -60px; width: 260px; height: 260px;
+    border-radius: 50%; background: rgba(255,255,255,0.06); z-index: 0;
+  }
+  .hero::after {
+    content: ''; position: absolute;
+    bottom: 60px; left: -280px; width: 180px; height: 180px;
+    border-radius: 50%; background: rgba(255,255,255,0.03); z-index: 0;
+  }
+.hero-text {
+    position: relative; z-index: 2;
+    padding: 32px 36px 36px;
+    min-height: 260px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    max-width: 65%;
+  }
+  .h-intro { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.80); line-height: 1.5; margin-bottom: 8px; }
+  .h-headline { font-size: 36px; font-weight: 900; color: #FFFFFF; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+
+  .hero-wave { position: relative; z-index: 3; margin-top: -2px; line-height: 0; }
+  .hero-wave svg { display: block; width: 100%; height: auto; }
+
+  /* ═══ MESSAGE BLOCK ═══ */
+  .msg-block {
+    padding: 4px 32px 24px;
+    text-align: center;
+  }
+  .msg-block p {
+    font-size: 14px; color: #525252; line-height: 1.6;
+    max-width: 460px; margin: 0 auto;
+  }
+  .msg-block strong { color: #171717; }
+
+  /* ═══ BENEFIT CARDS ═══ */
+  .benefits-sec { padding: 0 32px 28px; }
+  .benefit-card {
+    background: #FAFAF5; border: 1px solid #E5E5E0;
+    border-radius: 14px; padding: 18px 20px;
+    display: flex; align-items: flex-start; gap: 14px;
+    margin-bottom: 10px;
+  }
+  .benefit-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .benefit-icon svg { width: 22px; height: 22px; }
+  .benefit-icon-priority { background: linear-gradient(145deg, #EFF6FF, #DBEAFE); }
+  .benefit-icon-priority svg { color: #3B82F6; }
+  .benefit-icon-discount { background: linear-gradient(145deg, #ECFDF5, #D1FAE5); }
+  .benefit-icon-discount svg { color: #059669; }
+  .benefit-content h4 { font-size: 15px; font-weight: 700; color: #171717; margin-bottom: 3px; line-height: 1.3; }
+  .benefit-content p { font-size: 12px; color: #525252; line-height: 1.45; }
+
+  /* ═══ DISCLAIMER CARD ═══ */
+  .disclaimer-card {
+    background: #F5F5F0; border: 1px solid #E5E5E0;
+    border-radius: 14px; padding: 16px 20px;
+    margin: 0 32px 28px;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .disclaimer-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: #E5E5E0;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .disclaimer-icon svg { width: 16px; height: 16px; color: #525252; }
+  .disclaimer-card p { font-size: 11px; color: #525252; line-height: 1.5; font-weight: 500; }
+
+  /* ═══ CTA ═══ */
+  .cta-sec { padding: 0 32px 36px; text-align: center; }
+  .cta-btn {
+    display: block;
+    background: linear-gradient(135deg, #059669, #10B981);
+    color: #FFFFFF; font-size: 15px; font-weight: 700;
+    text-decoration: none; padding: 17px 40px;
+    border-radius: 15.6px; text-align: center;
+    box-shadow: 0 6px 12px -2px rgba(5,150,105,0.35);
+    transition: all 0.2s;
+  }
+  .cta-btn:hover { background: linear-gradient(135deg, #047857, #059669); transform: translateY(-1px); }
+  .cta-note { font-size: 11px; color: #A3A3A0; margin-top: 12px; line-height: 1.5; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+  /* ═══ FOOTER ═══ */
+  .email-footer {
+    background: #FAFAF5; border-top: 1px solid #E5E5E0;
+    padding: 20px 32px; text-align: center;
+  }
+  .footer-text { font-size: 11px; color: #A3A3A0; line-height: 1.6; margin-top: 8px; }
+  .footer-links { margin-top: 10px; font-size: 11px; }
+  .footer-links a { color: #525252; text-decoration: underline; margin: 0 8px; }
+
+  @media (max-width: 520px) {
+    .hero-text { max-width: 100% !important; }
+.h-headline { font-size: 28px; }
+    .msg-block, .benefits-sec, .cta-sec { padding-left: 16px; padding-right: 16px; }
+    .disclaimer-card { margin-left: 16px; margin-right: 16px; }
+    .topbar { padding-left: 16px; padding-right: 16px; }
+    body { padding: 16px 8px; }
+    .client-subject { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="email-client">
+  <div class="client-subject-bar">
+      <div class="client-subject">Gracias por tu interés en el Adelanto de efectivo</div>
+      <div class="client-meta">
+        <div class="sender-avatar"><img src="./assets2/logo.png" alt="Addi"></div>
+        <div class="sender-info">
+          <div class="sender-name-row">
+            <div><span class="s-name">Addi</span><span class="s-addr"> &lt;comunicaciones@addi.com&gt;</span></div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span class="e-date">5 may. 2026, 14:00</span>
+              <div class="action-btns">
+                <div class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h10a8 8 0 0 1 8 8v2M3 10l6 6M3 10l6-6"/></svg></div>
+                <div class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 17 20 12 15 7"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/></svg></div>
+                <div class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg></div>
+              </div>
+            </div>
+          </div>
+          <div class="to-lbl">Para: <strong>mi</strong></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="email-wrapper">
+      <div class="topbar">
+        <img src="./assets2/logo.png" alt="Addi" height="26" style="display:block;">
+        <a href="#" class="topbar-link">Ver en navegador</a>
+      </div>
+      <div class="hero hero-blue">
+<div class="hero-text">
+          <p class="h-intro">Adelanto de efectivo</p>
+          <h1 class="h-headline">Gracias por explorar esta experiencia</h1>
+        </div>
+      </div>
+      <div class="hero-wave"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0,40 L0,14 Q300,-14 600,14 L600,40 Z" fill="#FFFFFF"/></svg></div>
+
+      <!-- Message block -->
+      <div class="msg-block">
+        <p>Quisiste conocer el Adelanto de efectivo y eso nos dice mucho. <strong>Estamos construyendo esta experiencia con base en lo que clientes como tú nos muestran que necesitan.</strong></p>
+        <br>
+        <p>Aún estamos trabajando para que esté lista, pero tu interés ya cuenta. Esto es lo que ganaste por explorar:</p>
+      </div>
+
+      <!-- Benefits -->
+      <div class="benefits-sec">
+        <div class="benefit-card">
+          <div class="benefit-icon benefit-icon-priority">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="benefit-content">
+            <h4>Estás en la lista prioritaria</h4>
+            <p>Por registrar tu interés, ya estás en la lista para usarlo antes que nadie cuando esté disponible.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon benefit-icon-discount">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
+          <div class="benefit-content">
+            <h4>10% de descuento en tu siguiente compra con Cupo</h4>
+            <p>Como agradecimiento, tienes un 10% Off en tu siguiente compra en tiendas aliadas con tu Cupo Addi.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disclaimer — no credit impact -->
+      <div class="disclaimer-card">
+        <div class="disclaimer-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p>No se generó ningún crédito. Tu Cupo y tu historial crediticio <strong>no fueron afectados</strong>.</p>
+      </div>
+
+      <div class="cta-sec">
+        <a href="#" class="cta-btn">Usar mi 10% de descuento</a>
+        <p class="cta-note">El descuento aplica sobre tu siguiente compra con Cupo Addi en tiendas aliadas. Válido hasta el 30 de junio de 2026. No acumulable con otras promociones.</p>
+      </div>
+      <div class="email-footer">
+        <img src="./assets2/logo.png" alt="Addi" height="22" style="display:block;margin:0 auto;">
+        <p class="footer-text">© 2026 Addi. Bogotá, Colombia.</p>
+        <div class="footer-links"><a href="#">Preferencias de notificaciones</a><a href="#">Política de privacidad</a></div>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliados — Comunicación proactiva (heads-up)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #E5E5E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    color: #171717;
+  }
+
+  /* ═══ CONTEXT LABEL ═══ */
+  .context-label {
+    width: 100%; max-width: 600px;
+    margin-bottom: 12px;
+    padding: 10px 16px;
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-radius: 10px;
+    font-size: 12px; color: #1D4ED8; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .context-label span { font-weight: 400; color: #2563EB; }
+
+  .email-client { width: 100%; max-width: 600px; margin-bottom: 0; }
+
+  /* ═══ GMAIL CHROME ═══ */
+  .client-subject-bar {
+    background: #FFFFFF; border-radius: 12px 12px 0 0;
+    padding: 20px 24px 16px; border-bottom: 1px solid #E8EAED;
+  }
+  .client-subject { font-size: 20px; font-weight: 400; color: #202124; margin-bottom: 14px; line-height: 1.3; }
+  .client-meta { display: flex; align-items: flex-start; gap: 12px; }
+  .sender-avatar {
+    width: 40px; height: 40px; border-radius: 50%; background: #1E3A8A;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  .sender-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .sender-info { flex: 1; min-width: 0; }
+  .sender-name-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+  }
+  .s-name { font-size: 14px; font-weight: 600; color: #202124; }
+  .s-addr { font-size: 12px; color: #5F6368; }
+  .e-date { font-size: 12px; color: #5F6368; white-space: nowrap; }
+  .action-btns { display: flex; gap: 2px; }
+  .action-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: #5F6368; flex-shrink: 0;
+  }
+  .action-btn:hover { background: #F1F3F4; }
+  .action-btn svg { width: 17px; height: 17px; }
+  .to-lbl { font-size: 12px; color: #5F6368; margin-top: 2px; }
+
+  /* ═══ EMAIL WRAPPER ═══ */
+  .email-wrapper {
+    width: 100%; max-width: 600px; background: #FFFFFF;
+    border-radius: 0 0 12px 12px; overflow: hidden;
+    box-shadow: 0 24px 32px -4px rgba(0,0,0,0.4);
+  }
+
+  .topbar {
+    background: #FFFFFF; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #F5F5F0;
+  }
+  .topbar-link { font-size: 12px; color: #1D4ED8; text-decoration: none; font-weight: 600; }
+
+  /* ═══ HERO ═══ */
+  .hero { position: relative; overflow: hidden; }
+  .hero-blue { background: linear-gradient(180deg, #1E40AF 0%, #1E3A8A 60%, #172554 100%); }
+  .hero::before {
+    content: ''; position: absolute; top: -80px; right: -60px; width: 260px; height: 260px;
+    border-radius: 50%; background: rgba(255,255,255,0.06); z-index: 0;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: 60px; left: -280px; width: 180px; height: 180px;
+    border-radius: 50%; background: rgba(255,255,255,0.03); z-index: 0;
+  }
+
+  .hero-text {
+    position: relative; z-index: 2; padding: 36px 36px 40px;
+    min-height: 180px; display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .h-headline {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 30px; font-weight: 800; color: #FFFFFF;
+    line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .h-sub { font-size: 13px; color: rgba(255,255,255,0.80); line-height: 1.55; max-width: 420px; }
+  .hero-wave { position: relative; z-index: 3; margin-top: -2px; line-height: 0; }
+  .hero-wave svg { display: block; width: 100%; height: auto; }
+
+  /* ═══ MESSAGE ═══ */
+  .message-block { padding: 4px 32px 28px; }
+  .msg-card {
+    background: #FAFAF5; border: 1px solid #E5E5E0;
+    border-radius: 15.6px; padding: 24px;
+  }
+  .msg-card p { font-size: 14px; color: #404040; line-height: 1.65; margin-bottom: 14px; }
+  .msg-card p:last-child { margin-bottom: 0; }
+  .msg-card strong { color: #171717; }
+
+  /* ═══ FOOTER ═══ */
+  .email-footer {
+    background: #FAFAF5; border-top: 1px solid #E5E5E0;
+    padding: 20px 32px; text-align: center;
+  }
+  .footer-text { font-size: 11px; color: #A3A3A0; line-height: 1.6; margin-top: 8px; }
+  .footer-links { margin-top: 10px; font-size: 11px; }
+  .footer-links a { color: #525252; text-decoration: underline; margin: 0 8px; }
+
+  @media (max-width: 520px) {
+    .h-headline { font-size: 24px; }
+    .message-block, .highlight-sec, .closing { padding-left: 16px; padding-right: 16px; }
+    .topbar { padding-left: 16px; padding-right: 16px; }
+    body { padding: 16px 8px; }
+    .client-subject { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CONTEXT LABEL -->
+<div class="context-label">
+  📋 Proactivo <span>— Enviar como heads-up antes de que aliados pregunten. Solo si se aprueba internamente.</span>
+</div>
+
+<div class="email-client">
+  <div class="client-subject-bar">
+      <div class="client-subject">Seguimos optimizando la experiencia para tus clientes</div>
+      <div class="client-meta">
+        <div class="sender-avatar"><img src="./assets2/logo.png" alt="Addi"></div>
+        <div class="sender-info">
+          <div class="sender-name-row">
+            <div><span class="s-name">Addi</span><span class="s-addr"> &lt;aliados@addi.com&gt;</span></div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span class="e-date">5 may. 2026, 9:00</span>
+              <div class="action-btns">
+                <div class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h10a8 8 0 0 1 8 8v2M3 10l6 6M3 10l6-6"/></svg></div>
+                <div class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 17 20 12 15 7"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/></svg></div>
+                <div class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg></div>
+              </div>
+            </div>
+          </div>
+          <div class="to-lbl">Para: <strong>aliados</strong></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="email-wrapper">
+      <div class="topbar">
+        <img src="./assets2/logo.png" alt="Addi" height="26" style="display:block;">
+        <a href="#" class="topbar-link">Ver en navegador</a>
+      </div>
+
+      <!-- HERO -->
+      <div class="hero hero-blue">
+        <div class="hero-text">
+          <h1 class="h-headline">Seguimos mejorando la experiencia para clientes y aliados</h1>
+          <p class="h-sub">Nuestro compromiso es que más personas usen Addi, más seguido, en más lugares.</p>
+        </div>
+      </div>
+      <div class="hero-wave"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0,40 L0,14 Q300,-14 600,14 L600,40 Z" fill="#FFFFFF"/></svg></div>
+
+      <!-- MESSAGE -->
+      <div class="message-block">
+        <div class="msg-card">
+          <p>Hola,</p>
+          <p>Estamos explorando nuevas variantes de crédito con un grupo reducido de clientes. Tu operación e integración con Addi no cambian en absoluto.</p>
+          <p>Si algún cliente te pregunta por funcionalidades nuevas, puedes indicarle que se comunique directamente con Addi. Para cualquier duda, tu ejecutivo de cuenta está disponible.</p>
+          <p><strong>Equipo Addi</strong></p>
+        </div>
+      </div>
+
+      <div class="email-footer">
+        <img src="./assets2/logo.png" alt="Addi" height="22" style="display:block;margin:0 auto;">
+        <p class="footer-text">© 2026 Addi. Bogotá, Colombia.</p>
+        <div class="footer-links"><a href="#">Centro de aliados</a><a href="#">Política de privacidad</a></div>
+      </div>
+</div>
+
+</body>
+</html>

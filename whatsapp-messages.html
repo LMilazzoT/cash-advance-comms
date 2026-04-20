@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Messages — Adelanto de efectivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #E5E5E0;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #FFFFFF;
+    background: #3B82F6; padding: 4px 12px; border-radius: 6px;
+    margin-bottom: -28px;
+  }
+  .wa-phone {
+    width: 100%; max-width: 380px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px -4px rgba(0,0,0,0.15);
+  }
+  .wa-header {
+    background: #075E54;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .wa-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: #FFFFFF;
+  }
+  .wa-name { color: #FFFFFF; font-size: 14px; font-weight: 600; }
+  .wa-status { color: rgba(255,255,255,0.7); font-size: 11px; }
+  .wa-chat {
+    background: #ECE5DD;
+    padding: 16px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .wa-bubble {
+    background: #FFFFFF;
+    border-radius: 0 10px 10px 10px;
+    padding: 10px 14px;
+    max-width: 92%;
+    font-size: 13px;
+    color: #303030;
+    line-height: 1.55;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  }
+  .wa-bubble strong { color: #171717; }
+  .wa-bubble .wa-link {
+    display: inline-block;
+    color: #075E54;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: 4px;
+  }
+  .wa-time {
+    font-size: 10px; color: #999;
+    text-align: right; margin-top: 4px;
+  }
+  .wa-label {
+    font-size: 12px; font-weight: 700; color: #525252;
+    text-align: center; padding: 12px 16px 0;
+    background: #ECE5DD;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- WHATSAPP 1 — Introducción / Day 0      -->
+<!-- ═══════════════════════════════════════ -->
+<div class="section-label">WhatsApp 1 — Introducción</div>
+<div class="wa-phone">
+  <div class="wa-header">
+    <div class="wa-avatar">A</div>
+    <div>
+      <div class="wa-name">Addi</div>
+      <div class="wa-status">en línea</div>
+    </div>
+  </div>
+  <div class="wa-label">Español</div>
+  <div class="wa-chat">
+    <div class="wa-bubble">
+      ¡Hola! 👋 Ahora con Addi puedes solicitar un <strong>Adelanto de efectivo</strong> directamente desde tu app.
+
+      Dinero directo a tu cuenta bancaria, sin consumir tu cupo. Paga de 1 a 3 meses.
+
+      👉 <a href="#" class="wa-link">Ingresa a la app</a>
+      <div class="wa-time">10:00 a.m.</div>
+    </div>
+  </div>
+  <div class="wa-label">English</div>
+  <div class="wa-chat">
+    <div class="wa-bubble">
+      Hi! 👋 Now with Addi you can request a <strong>Cash Advance</strong> directly from your app.
+
+      Cash straight to your bank account, without using your credit limit. Pay in 1 to 3 months.
+
+      👉 <a href="#" class="wa-link">Open the app</a>
+      <div class="wa-time">10:00 a.m.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- WHATSAPP 2 — Reminder / D+3            -->
+<!-- ═══════════════════════════════════════ -->
+<div class="section-label">WhatsApp 2 — Reminder</div>
+<div class="wa-phone">
+  <div class="wa-header">
+    <div class="wa-avatar">A</div>
+    <div>
+      <div class="wa-name">Addi</div>
+      <div class="wa-status">en línea</div>
+    </div>
+  </div>
+  <div class="wa-label">Español</div>
+  <div class="wa-chat">
+    <div class="wa-bubble">
+      ¡Oye! 💰 ¿Ya viste que puedes solicitar hasta <strong>$1.000.000</strong> con tu Adelanto de efectivo en Addi?
+
+      Lo pides desde la app, eliges tu plazo y el dinero llega a tu cuenta el mismo día.*
+
+      👉 <a href="#" class="wa-link">Ingresa a la app</a>
+
+      <span style="font-size:10px;color:#999;">*Mismo día a cuentas Bancolombia. De 1 a 3 días hábiles con otras entidades.</span>
+      <div class="wa-time">10:00 a.m.</div>
+    </div>
+  </div>
+  <div class="wa-label">English</div>
+  <div class="wa-chat">
+    <div class="wa-bubble">
+      Hey! 💰 Did you know you can request up to <strong>$1,000,000</strong> with your Cash Advance from Addi?
+
+      Request it from the app, choose your term, and get the money in your account the same day.*
+
+      👉 <a href="#" class="wa-link">Open the app</a>
+
+      <span style="font-size:10px;color:#999;">*Same-day deposit to Bancolombia accounts. 1 to 3 business days for other banks.</span>
+      <div class="wa-time">10:00 a.m.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
