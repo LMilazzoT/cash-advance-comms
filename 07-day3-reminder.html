@@ -197,6 +197,24 @@
   .footer-links { margin-top: 10px; font-size: 11px; }
   .footer-links a { color: #525252; text-decoration: underline; margin: 0 8px; }
 
+  /* ═══ ANTI-FRAUD DISCLAIMER ═══ */
+  .info-note {
+    background: #EFF6FF; border: 1px solid #DBEAFE;
+    border-radius: 14px; padding: 16px 20px;
+    margin: 0 32px 28px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .info-icon {
+    width: 32px; height: 32px; background: #3B82F6;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .info-icon svg { width: 16px; height: 16px; color: #FFFFFF; }
+  .info-note p {
+    font-size: 11px; color: #1E40AF; line-height: 1.5; font-weight: 500;
+  }
+  .info-note strong { color: #1E3A8A; }
+
   @media (max-width: 520px) {
     .hero-text { max-width: 100% !important; }
     .hero-img-area { display: none; }
@@ -269,6 +287,12 @@
         <a href="#" class="cta-btn">Solicita tu Adelanto de efectivo</a>
         <p class="cta-note">*Sujeto a evaluación crediticia. Los Adelantos de efectivo son un producto independiente de tu cupo. Llega el mismo día a cuentas Bancolombia, de 1 a 3 días hábiles con otras entidades. Aplican intereses y costos.</p>
       </div>
+      <!-- Security disclaimer -->
+      <div class="info-note">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <p><strong>El Adelanto de efectivo solo está disponible desde la app oficial de Addi.</strong> No trabajamos con intermediarios ni asesores externos.</p>
+      </div>
+
       <div class="email-footer">
         <img src="./assets2/logo.png" alt="Addi" height="22" style="display:block;margin:0 auto;">
         <p class="footer-text">© 2026 Addi. Bogotá, Colombia.</p>

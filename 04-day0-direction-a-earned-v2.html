@@ -251,22 +251,22 @@
   .feat-chip span { font-size: 12px; font-weight: 600; color: #171717; line-height: 1.4; }
 
   /* ═══ ANTI-FRAUD DISCLAIMER ═══ */
-  .fraud-disclaimer {
-    background: #FEF3C7; border: 1px solid #FDE68A;
+  .info-note {
+    background: #EFF6FF; border: 1px solid #DBEAFE;
     border-radius: 14px; padding: 16px 20px;
     margin: 0 32px 28px;
     display: flex; gap: 12px; align-items: flex-start;
   }
-  .fraud-icon {
-    width: 32px; height: 32px; background: #F59E0B;
+  .info-icon {
+    width: 32px; height: 32px; background: #3B82F6;
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .fraud-icon svg { width: 16px; height: 16px; color: #FFFFFF; }
-  .fraud-disclaimer p {
-    font-size: 11px; color: #92400E; line-height: 1.5; font-weight: 500;
+  .info-icon svg { width: 16px; height: 16px; color: #FFFFFF; }
+  .info-note p {
+    font-size: 11px; color: #1E40AF; line-height: 1.5; font-weight: 500;
   }
-  .fraud-disclaimer strong { color: #78350F; }
+  .info-note strong { color: #1E3A8A; }
 
   /* ═══ CTA ═══ */
   .cta-sec { padding: 0 32px 36px; text-align: center; }
@@ -304,7 +304,7 @@
     .dual-cards { padding-left: 16px; padding-right: 16px; }
     .topbar { padding-left: 16px; padding-right: 16px; }
     .msg-block { padding-left: 16px; padding-right: 16px; }
-    .fraud-disclaimer { margin-left: 16px; margin-right: 16px; }
+    .info-note { margin-left: 16px; margin-right: 16px; }
     body { padding: 16px 8px; }
     .client-subject { font-size: 18px; }
   }
@@ -362,7 +362,7 @@
         <div class="amount-box">
           <div class="amt-lbl">Podremos ofrecerte — hasta</div>
           <div class="amt-val">$1.000.000*</div>
-          <div class="amt-sub">Directo en tu cuenta bancaria · Paga en 1 a 3 meses</div>
+          <div class="amt-sub">Directo en tu cuenta bancaria · No consume tu cupo · Paga en 1 a 3 meses</div>
         </div>
       </div>
 
@@ -400,20 +400,17 @@
         </div>
       </div>
 
-      <!-- Trust -->
-      <div class="feat-sec">
-        <div class="feat-grid">
-          <div class="feat-chip"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span>No consume tu cupo</span></div>
-          <div class="feat-chip"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><span>Solo desde la app oficial de Addi</span></div>
-          <div class="feat-chip"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><span>Directo a tu cuenta bancaria</span></div>
-          <div class="feat-chip"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span>Sin intermediarios</span></div>
-        </div>
-      </div>
-
       <div class="cta-sec">
         <a href="#" class="cta-btn">Solicita tu Adelanto en la app</a>
         <p class="cta-note">*Sujeto a evaluación crediticia. Los Adelantos de efectivo son un producto independiente de tu cupo. Llega el mismo día a cuentas Bancolombia, de 1 a 3 días hábiles con otras entidades. Aplican intereses y costos.</p>
       </div>
+
+      <!-- Security disclaimer -->
+      <div class="info-note">
+        <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <p><strong>El Adelanto de efectivo solo está disponible desde la app oficial de Addi.</strong> No trabajamos con intermediarios ni asesores externos.</p>
+      </div>
+
       <div class="email-footer">
         <img src="./assets2/logo.png" alt="Addi" height="22" style="display:block;margin:0 auto;">
         <p class="footer-text">© 2026 Addi. Bogotá, Colombia.</p>
